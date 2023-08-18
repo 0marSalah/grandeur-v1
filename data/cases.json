@@ -1,0 +1,56 @@
+[
+  {
+    "image": "/../cases/case-1.png",
+    "id": 1,
+    "name": "Black Carbon Fiber Case",
+    "price": "$699"
+  },
+  {
+    "image": "/../cases/case-2.png",
+    "id": 2,
+    "name": "Black Carbon Fiber Case 2",
+    "price": "$500"
+  },
+  {
+    "image": "/../cases/case-3.png",
+    "id": 3,
+    "name": "Gray Aluminum Case",
+    "price": "$450"
+  },
+  {
+    "image": "/../cases/case-4.png",
+    "id": 4,
+    "name": "Brown Leather Case",
+    "price": "$529"
+  },
+  {
+    "image": "/../cases/case-5.png",
+    "id": 5,
+    "name": "Blue Aluminum Case",
+    "price": "$410"
+  },
+  {
+    "image": "/../cases/case-6.png",
+    "id": 6,
+    "name": "Black Carbon Fiber Case",
+    "price": "$999"
+  },
+  {
+    "image": "/../cases/case-7.png",
+    "id": 7,
+    "name": "Black Carbon Fiber Case",
+    "price": "$459"
+  },
+  {
+    "image": "/../cases/case-8.png",
+    "id": 8,
+    "name": "Brown Leather Case",
+    "price": "$649"
+  },
+  {
+    "image": "/../cases/case-9.png",
+    "id": 8,
+    "name": "Brown Leather Case",
+    "price": "$649"
+  }
+]

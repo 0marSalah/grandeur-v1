@@ -1,0 +1,257 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-image {
+  width: auto;
+  max-width: 225px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.animated-slide-image {
+  position: fixed;
+  left: calc(50% - 57px);
+  top: 42px;
+  z-index: 10;
+}
+
+.strap-image {
+  position: absolute;
+  left: calc(50% - 200px);
+  top: 1px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.case-image {
+  position: absolute;
+  z-index: 10;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.strape-slide-image {
+  width: auto;
+  max-width: 400px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.right-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.se {
+  margin-inline: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.login-btn {
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.x-icon {
+  margin-block: 20px;
+  margin-left: -10px;
+  cursor: pointer;
+}
+
+.mobile-list {
+  list-style: none;
+}
+
+.mobile-list li {
+  margin-block: 10px;
+  padding: 15px 0;
+  margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+}
+
+.mobile-list li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #6e6e6e;
+}
+
+.mobile-list .mob-login-btn {
+  padding-block: 25px;
+  margin-top: 50px;
+}
+
+.watch-0,
+.watch-1,
+.watch-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch-0 img {
+  height: 304px;
+  width: 166px;
+}
+
+.watch-1 img {
+  height: 351px;
+  width: 171px;
+}
+
+.watch-2 img {
+  width: 185.797px;
+  height: 368.912px;
+}
+
+.swiper-btns-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  overflow-x: auto;
+}
+
+.swiper-button-container {
+  width: fit-content;
+  display: flex;
+  gap: 20px;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.btn-wrap {
+  border: 20px;
+  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.52);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding-block: 10px;
+  padding-inline: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.btn-wrap button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.color-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.swiper-button-container ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0px 0 10px 0 10px;
+  transition: 0.3s ease-in-out;
+  margin-left: 10px;
+}
+
+.swiper-button-container ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.swiper-button-container ul li p {
+  color: #ffff;
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.watch-det {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.8;
+  text-align: center;
+  color: #000000;
+}
+
+.watch-det .name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.watch-det .price {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.watch-det .price span {
+  color: red;
+}
