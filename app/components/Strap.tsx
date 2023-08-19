@@ -12,7 +12,7 @@ interface StrapProps {
   caseImg: string;
   straps: { id: number; image: string | StaticImport }[];
   swiperRef: any;
-  strapType;
+  strapType: string;
 }
 const StrapSwiper = ({
   swiperRef,

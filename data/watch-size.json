@@ -2,7 +2,7 @@
   {
     "id": 0,
     "size": "40/41 mm",
-    "image": "/../watches/watch-0.svg",
+    "image": "/../watches/watch-0.png",
     "name": "40/41 mm Carbon Fiber- Black Strap",
     "type": "normal",
     "stripImg": "/strap.svg"
@@ -10,7 +10,7 @@
   {
     "id": 1,
     "size": "44/45 MM",
-    "image": "/../watches/watch-0.svg",
+    "image": "/../watches/watch-1.png",
     "name": "44/45 mm Carbon Fiber - Black Strap",
     "type": "normal",
     "stripImg": "/strap.svg"
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "size": "Ultra 49 MM",
-    "image": "/../watches/watch-1.svg",
+    "image": "/../watches/watch-2.png",
     "name": "49 mm Ultra Case - Black Strap",
     "type": "ultra",
     "stripImg": "/ultra-strips/Gray.svg"
