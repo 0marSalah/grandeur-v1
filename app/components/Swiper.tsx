@@ -23,13 +23,10 @@ export default function CutomeSwiper() {
 
   const swiperRef = useRef(null);
 
-  const handlePagination = useCallback(
-    (index: number) => {
-      setStrapActiveIdx(index);
-      swiperRef?.current && swiperRef.current.swiper.slideTo(strapActiveIdx);
-    },
-    [strapActiveIdx]
-  );
+  const handlePagination = (index: number) => {
+    setStrapActiveIdx(index);
+    swiperRef?.current && swiperRef.current.swiper.slideTo(index);
+  };
 
   const handleSlideChange = (swiper: { activeIndex: number }) => {
     if (swiperType === "case") {
@@ -46,18 +43,12 @@ export default function CutomeSwiper() {
     }
   };
 
-  const handleSelectSize = useCallback((idx: number) => {
+  const handleSelectSize = (idx: number) => {
     setSizeActiveIdx(idx);
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideTo(idx);
     }
-  }, []);
-
-  useEffect(() => {
-    handlePagination(strapActiveIdx);
-    handleSelectSize(sizeActiveIdx);
-  }, [strapActiveIdx, handlePagination, sizeActiveIdx, handleSelectSize]);
-
+  };
   return (
     <div style={{ position: "relative" }}>
       {swiperType === "size" && (
