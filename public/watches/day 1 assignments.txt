@@ -1,0 +1,10 @@
+
+1- https://www.hackerrank.com/challenges/c-tutorial-conditional-if-else/problem?isFullScreen=true
+
+2 - https://www.hackerrank.com/challenges/c-tutorial-for-loop/problem?isFullScreen=true
+
+3 - print star pyramid patterns in C++ programming, we have used two nested for loops.
+
+4- https://www.hackerrank.com/challenges/c-tutorial-struct/problem?isFullScreen=true
+
+5- https://www.hackerrank.com/challenges/arrays-introduction/problem?isFullScreen=true

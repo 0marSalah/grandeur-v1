@@ -9,6 +9,7 @@ import straps from "@data/normal-straps.json";
 import ultraStraps from "@data/ultra-straps.json";
 import watches from "@data/watch-size.json";
 import StrapSwiper from "./Strap";
+import useTranslation from "next-translate/useTranslation";
 
 export default function CutomeSwiper() {
   const [caseImg, setCaseImg] = useState("/cases/case-8.png");
@@ -20,6 +21,9 @@ export default function CutomeSwiper() {
   const [strapActiveIdx, setStrapActiveIdx] = useState(0);
   const [strapType, setStrapType] = useState("normal");
   const [sizeActiveIdx, setSizeActiveIdx] = useState(0);
+
+  const { lang } = useTranslation("common");
+  console.log(lang);
 
   const swiperRef = useRef(null);
 
@@ -56,7 +60,7 @@ export default function CutomeSwiper() {
           ref={swiperRef}
           style={{ padding: "90px 0 50px 0" }}
           centeredSlides
-          slidesPerView={1}
+          slidesPerView={5}
           spaceBetween={5}
           breakpoints={{
             400: { slidesPerView: 1 },
