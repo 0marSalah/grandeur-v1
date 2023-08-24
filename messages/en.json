@@ -1,0 +1,8 @@
+{
+  "Index": {
+    "landing-title": "Build a Watch on your Style",
+    "landing-subtitle": "Starts from $380",
+    "label": "Change language",
+    "locale": "{locale, select, ar {عربي} en {English} other {Unknown}}"
+  }
+}

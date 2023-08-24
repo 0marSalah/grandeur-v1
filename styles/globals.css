@@ -15,6 +15,11 @@ a {
   }
 }
 
+.swiper {
+  direction: ltr;
+  padding-top: 100px;
+}
+
 .swiper-wrapper {
   display: flex;
   align-items: flex-end;
@@ -80,6 +85,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
 }
 
 .se {
@@ -90,7 +96,7 @@ a {
 
 .login-btn {
   display: inline-flex;
-  padding: 10px;
+  padding: 10px 15px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -98,7 +104,6 @@ a {
   border-radius: 8px;
   background: #000;
   color: #fff;
-  margin-left: 10px;
   cursor: pointer;
 }
 .x-icon {
@@ -189,8 +194,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   white-space: nowrap;
+  color: #fff;
 }
 
 .btn-wrap button {
@@ -198,6 +203,7 @@ a {
   background: none;
   cursor: pointer;
   font-size: 0.9rem;
+  color: #fff;
 }
 
 .color-wrap {
@@ -280,4 +286,15 @@ a {
 .size-det {
   margin-top: 50px;
   margin-bottom: 10px;
+}
+
+.local-switch {
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.local-switch:focus {
+  outline: none;
 }

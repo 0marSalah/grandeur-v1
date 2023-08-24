@@ -8,47 +8,32 @@ import {
   Vector5,
   Vector6,
   Vector7,
-  Vector8,
 } from "@styles/Vectors";
 import Link from "next/link";
 import { styled } from "styled-components";
-import { SelectedProvider } from "@context/active";
-import StyledComponentsRegistry from "./registry";
-import Image from "next/image";
+import StyledComponentsRegistry from "../registry";
 import "@styles/globals.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { NextIntlClientProvider } from "next-intl";
+import HeaderCom from "./components/Header";
 
-export default function RootLayout({
+export default function Rootlayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: {
+    locale: string;
+  };
 }) {
-  const list = [
-    {
-      name: "Premium Watches",
-      link: "/",
-    },
-    {
-      name: "Newsletter",
-      link: "/",
-    },
-    {
-      name: "FAQs",
-      link: "/",
-    },
-    {
-      name: "Contact us",
-      link: "/",
-    },
-    {
-      name: "Shopping cart",
-      link: "/",
-    },
-    {
-      name: "Payment page",
-      link: "/",
-    },
-  ];
+  const [messages, setMessages] = useState({});
+  useEffect(() => {
+    const f = async () => {
+      setMessages((await import(`../../messages/${locale}.json`)).default);
+    };
+    f();
+  }, [locale]);
+
   const [clicked, setClicked] = useState(false);
 
   const handleBurger = () => {
@@ -60,7 +45,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
       <body
         style={{
           display: "flex",
@@ -68,9 +53,10 @@ export default function RootLayout({
           alignItems: "center",
         }}
       >
-        <StyledComponentsRegistry>
-          <SelectedProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <StyledComponentsRegistry>
             <AppWrapper>
+              {/* <HeaderCom /> */}
               <Vector className="anim" src={"svgs/Isolationtop.svg"} alt="" />
               <Vector1
                 className="anim"
@@ -115,71 +101,13 @@ export default function RootLayout({
                     </LogoWrapperMob>
                   </HeaderConMob>
                 </HeaderMob>
-                <div
-                  style={{
-                    display: `${clicked ? "block" : "none"}`,
-                    position: "fixed",
-                    backgroundColor: "#000",
-                    color: "white",
-                    padding: "20px 70px 20px 30px",
-                    left: "0",
-                    top: "0",
-                    zIndex: "9",
-                  }}
-                >
-                  <Image
-                    src="./x.svg"
-                    alt=""
-                    onClick={handleX}
-                    width={25}
-                    height={25}
-                    className={"x-icon"}
-                  />
-                  <ul className="mobile-list">
-                    {list.map((item, index) => (
-                      <>
-                        <li key={index}>{item.name}</li>
-                      </>
-                    ))}
-                    <li>English/عربي</li>
-                    <p className="mob-login-btn">Login/Regisger</p>
-                  </ul>
-                </div>
-                <Header>
-                  <LogoWrapper>
-                    <Link href="/">
-                      <img src={"logo.png"} alt="logo" />
-                    </Link>
-                  </LogoWrapper>
-                  <Ul>
-                    {list.slice(0, 4).map((item, index) => (
-                      <li key={index}>{item.name}</li>
-                    ))}
-                  </Ul>
-                  <div className="right-div">
-                    <Image
-                      src="/search.svg"
-                      alt="search"
-                      width={20}
-                      height={20}
-                      className="se"
-                    />
-                    <Image
-                      src="/cart.svg"
-                      alt="search"
-                      width={20}
-                      height={20}
-                      className="se"
-                    />
-                    <button className="login-btn">Login/Regisger</button>
-                  </div>
-                  <img src="/burger.svg" alt="" className="burger" />
-                </Header>
+                <HeaderCom clicked={clicked} handleX={handleX} />
+
                 {children}
               </AppContainer>
             </AppWrapper>
-          </SelectedProvider>
-        </StyledComponentsRegistry>
+          </StyledComponentsRegistry>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
@@ -192,6 +120,7 @@ const HeaderMob = styled.div`
   left: 0vw;
   display: flex;
   justify-content: center;
+  direction: rtl;
 
   @media screen and (min-width: 950px) {
     display: none;
@@ -228,6 +157,8 @@ const LogoWrapperMob = styled.div`
 const AppWrapper = styled.div`
   width: 100vw;
   height: 100vh;
+
+  overflow: hidden;
   margin: 0;
   padding: 0;
   background-size: cover;
@@ -274,7 +205,7 @@ const AppContainer = styled.div`
   /* overflow-y: auto; */
 
   @media screen and (max-width: 950px) {
-    padding: 80px 0px 30px 0;
+    padding: 170px 0px 30px 0;
     min-height: 100%;
     min-width: 100%;
   }
@@ -311,62 +242,4 @@ const LinkC = styled(Link)`
   text-decoration: none;
   color: black;
   cursor: pointer;
-`;
-
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 25px;
-  width: 100%;
-
-  .burger {
-    display: none;
-    width: 25px;
-    margin-right: 50px;
-
-    @media screen and (max-width: 950px) {
-      display: block;
-    }
-  }
-
-  @media screen and (max-width: 950px) {
-    display: none;
-  }
-`;
-
-const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  width: 210px;
-  margin-top: -10px;
-`;
-
-const Ul = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-
-  @media screen and (max-width: 950px) {
-    display: none;
-  }
-
-  li {
-    font-size: 14px;
-    font-weight: 400;
-    color: #000000;
-    cursor: pointer;
-    height: 68px;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-
-    &:not(:last-child):after {
-      content: "|";
-      margin-left: 10px;
-    }
-  }
 `;

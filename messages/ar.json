@@ -1,0 +1,17 @@
+{
+  "Index": {
+    "landing-title": "اصنع ساعتك بطريقتك",
+    "landing-subtitle": "يبداء من 380 دولار",
+    "Header": "هااااااااااااااااااااااااي",
+    "label": "Change language",
+    "locale": "{locale, select, ar {عربي} en {English} other {Unknown}}"
+  },
+  "Customizer": {
+    "From": "من",
+    "Case Size": "حجم الشاشه",
+    "Case Type": "نوع الشاشه",
+    "Strap Color": "لون الحزام",
+    "Price": "السعر",
+    "RAW TITANIUM CASE": "شاشه تيتانيوم"
+  }
+}

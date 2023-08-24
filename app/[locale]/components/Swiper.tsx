@@ -3,13 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/virtual";
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import cases from "@data/cases.json";
 import straps from "@data/normal-straps.json";
 import ultraStraps from "@data/ultra-straps.json";
 import watches from "@data/watch-size.json";
 import StrapSwiper from "./Strap";
-import useTranslation from "next-translate/useTranslation";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function CutomeSwiper() {
   const [caseImg, setCaseImg] = useState("/cases/case-8.png");
@@ -22,8 +22,8 @@ export default function CutomeSwiper() {
   const [strapType, setStrapType] = useState("normal");
   const [sizeActiveIdx, setSizeActiveIdx] = useState(0);
 
-  const { lang } = useTranslation("common");
-  console.log(lang);
+  const locale = useLocale();
+  const t = useTranslations("Customizer");
 
   const swiperRef = useRef(null);
 
@@ -58,7 +58,7 @@ export default function CutomeSwiper() {
       {swiperType === "size" && (
         <Swiper
           ref={swiperRef}
-          style={{ padding: "90px 0 50px 0" }}
+          style={{ padding: "100px 0 50px 0" }}
           centeredSlides
           slidesPerView={5}
           spaceBetween={5}
@@ -92,9 +92,13 @@ export default function CutomeSwiper() {
       <div className="watch-det">
         {swiperType === "size" && (
           <div className="case-det">
-            <p className="name">{watches[sizeActiveIdx].name}</p>
+            <p className="name">
+              {locale === "en"
+                ? watches[sizeActiveIdx].name
+                : watches[sizeActiveIdx].arname}
+            </p>
             <p className="price">
-              From: <span>699$</span>
+              {t("From")}: <span>699$</span>
             </p>
           </div>
         )}
@@ -157,9 +161,13 @@ export default function CutomeSwiper() {
       <div className="watch-det">
         {swiperType === "case" && (
           <div className="case-det">
-            <p className="name">{cases[caseActiveIdx].name}</p>
+            <p className="name">
+              {locale === "en"
+                ? cases[caseActiveIdx].name
+                : cases[caseActiveIdx].arname}
+            </p>
             <p className="price">
-              Price: <span>{cases[caseActiveIdx].price}</span>
+              {t("Price")}: <span>{cases[caseActiveIdx].price}</span>
             </p>
           </div>
         )}
@@ -167,12 +175,20 @@ export default function CutomeSwiper() {
       <div className="swiper-btns-wrap">
         <div className="swiper-button-container">
           <div className="btn-wrap" onClick={() => setSwiperType("size")}>
-            <Image width={18} height={25} src="/Frame-icon.svg" alt="" />
+            <Image
+              width={18}
+              height={25}
+              style={{
+                marginLeft: swiperType == "size" ? "" : "10px",
+              }}
+              src="/Frame-icon.svg"
+              alt=""
+            />
             <button
               className="swiper-button"
               onClick={() => setSwiperType("size")}
             >
-              Case Size
+              {swiperType === "size" ? "" : t("Case Size")}
             </button>
             {swiperType === "size" && (
               <div className="size-list">
@@ -184,7 +200,7 @@ export default function CutomeSwiper() {
                     handleSelectSize(0);
                   }}
                 >
-                  {watches[0].size}
+                  {locale === "en" ? watches[0].size : watches[0].arsize}
                 </li>
                 <li
                   style={{
@@ -194,7 +210,7 @@ export default function CutomeSwiper() {
                     handleSelectSize(1);
                   }}
                 >
-                  {watches[1].size}
+                  {locale === "en" ? watches[1].size : watches[0].arsize}
                 </li>
                 <li
                   style={{
@@ -204,19 +220,27 @@ export default function CutomeSwiper() {
                     handleSelectSize(2);
                   }}
                 >
-                  {watches[2].size}
+                  {locale === "en" ? watches[2].size : watches[0].arsize}
                 </li>
               </div>
             )}
           </div>
           <div className="btn-wrap">
-            <Image width={18} height={25} src="/Group-icon.svg" alt="" />
+            <Image
+              width={18}
+              height={25}
+              style={{
+                marginLeft: swiperType == "case" ? "" : "10px",
+              }}
+              src="/Group-icon.svg"
+              alt=""
+            />
             {swiperType !== "case" ? (
               <button
                 className="swiper-button"
                 onClick={() => setSwiperType("case")}
               >
-                Case Type
+                {t("Case Type")}
               </button>
             ) : (
               <div
@@ -232,9 +256,13 @@ export default function CutomeSwiper() {
                     marginRight: "10px",
                   }}
                 >
-                  RAW TITANIUM CASE
+                  {t("RAW TITANIUM CASE")}
                 </p>
-                <p>{cases[caseActiveIdx].name.toUpperCase()}</p>
+                <p>
+                  {locale === "en"
+                    ? cases[caseActiveIdx].name.toUpperCase()
+                    : cases[caseActiveIdx].arname}
+                </p>
               </div>
             )}
           </div>
@@ -242,10 +270,18 @@ export default function CutomeSwiper() {
             className="color-wrap btn-wrap"
             onClick={() => setSwiperType("strap")}
           >
-            <Image width={20} height={20} src="/steak-icon.svg" alt="" />
+            <Image
+              width={20}
+              height={20}
+              style={{
+                marginLeft: swiperType == "strap" ? "" : "10px",
+              }}
+              src="/steak-icon.svg"
+              alt=""
+            />
             {swiperType !== "strap" && (
               <button onClick={() => setSwiperType("strap")}>
-                Strap Color
+                {t("Strap Color")}
               </button>
             )}
 
@@ -259,7 +295,7 @@ export default function CutomeSwiper() {
                         backgroundColor: color.color,
                       }}
                     ></div>
-                    <p>{color.name}</p>
+                    <p>{locale === "en" ? color.name : color.arname}</p>
                   </li>
                 ))}
               </ul>

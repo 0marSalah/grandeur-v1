@@ -4,21 +4,29 @@ import React from "react";
 import { keyframes, styled } from "styled-components";
 
 import "@styles/globals.css";
+import { useTranslations } from "next-intl";
 
-const LandingPage: React.FC = () => {
+type LandingType = {
+  params: { locale: "ar" | "en" };
+};
+
+const LandingPage = ({ params: { locale } }: LandingType) => {
   const [isHovered, setIsHovered] = React.useState(false);
+
+  const t = useTranslations("Index");
 
   return (
     <Container>
       <TextWrapper>
         <Title src="/title.png" alt="GRANDEUR" />
         <div className="P-wrap">
-          <P>Build a Watch on your Style</P>
+          <P>{t("landing-title")}</P>
         </div>
-        <Caption>Starts from $380</Caption>
+        <Caption>{t("landing-subtitle")}</Caption>
         <>
           <Link href={"/customizer"}>
             <Button
+              lang={locale}
               onMouseEnter={() => {
                 setIsHovered(true);
               }}
@@ -62,8 +70,8 @@ const Container = styled.div`
   .hero-wrap {
     width: 100% !important;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
 
     @media screen and (max-width: 1100px) {
       width: 28vw;
@@ -75,7 +83,7 @@ const Container = styled.div`
   }
 
   .her-con {
-    width: 20vw;
+    width: 22.5vw;
 
     @media screen and (max-width: 1300px) {
       width: 25vw;
@@ -175,7 +183,7 @@ const ButtonAnimation = keyframes`
   }
 `;
 
-const Button = styled.button<{ isHovered: boolean }>`
+const Button = styled.button<{ isHovered: boolean; lang: "en" | "ar" }>`
   padding: 10px 100px 10px 15px;
   animation: ${({ isHovered }) => (isHovered ? ButtonAnimation : "none")} 0.2s
     forwards;
@@ -194,7 +202,7 @@ const Button = styled.button<{ isHovered: boolean }>`
   position: relative;
 
   &::before {
-    content: "New";
+    content: "${({ lang }) => (lang == "en" ? "New" : "الان")}";
     position: absolute;
     left: -30px;
     top: 10px;
@@ -211,7 +219,7 @@ const Button = styled.button<{ isHovered: boolean }>`
     animation-delay: 2s;
   }
   &::after {
-    content: "Get Started";
+    content: "${({ lang }) => (lang == "en" ? "Start Now" : "ابداء الان")}";
     position: absolute;
     right: 15px;
     top: 12.5px;

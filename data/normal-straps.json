@@ -3,60 +3,70 @@
     "id": 0,
     "color": "#2f4a33",
     "name": "Green",
+    "arname": "اخضر",
     "image": "/../straps/strap-7.png"
   },
   {
     "id": 1,
     "color": "#282828",
     "name": "Black",
+    "arname": "اسود",
     "image": "/../straps/strap-9.png"
   },
   {
     "id": 2,
     "color": "#7fc4eb",
     "name": "Blue",
+    "arname": "ازرق",
     "image": "/../straps/strap-1.png"
   },
   {
     "id": 3,
     "color": "#929292",
     "name": "Grey",
+    "arname": "ابيض",
     "image": "/../straps/strap-8.png"
   },
   {
     "id": 4,
     "color": "#f2d13a",
     "name": "Yellow",
+    "arname": "اصفر",
     "image": "/../straps/strap-2.png"
   },
   {
     "id": 5,
     "color": "#28C9AD",
     "name": "Tiffany",
+    "arname": "تيفني",
     "image": "/../straps/strap-3.png"
   },
   {
     "id": 6,
     "color": "#f56821",
     "name": "Orange",
+    "arname": "برتقال",
     "image": "/../straps/strap-5.png"
   },
   {
     "id": 7,
     "color": "#D12F30",
     "name": "Red",
+    "arname": "احمر",
     "image": "/../straps/strap-4.png"
   },
   {
     "id": 8,
     "color": "#06064f",
     "name": "Navy",
+    "arname": "ارجواني",
     "image": "/../straps/strap-6.png"
   },
   {
     "id": 9,
     "color": "#ebebeb",
     "name": "White",
+    "arname": "ابيض",
     "image": "/../straps/strap-10.png"
   }
 ]
