@@ -3,60 +3,60 @@
     "id": 0,
     "color": "#2f4a33",
     "name": "Green",
-    "image": "/../ultra-straps/Green.png"
+    "image": "/ultra-straps/Green.png"
   },
   {
     "id": 1,
     "color": "#282828",
     "name": "Black",
-    "image": "/../ultra-straps/Black.png"
+    "image": "/ultra-straps/Black.png"
   },
   {
     "id": 2,
     "color": "#7fc4eb",
     "name": "Blue",
-    "image": "/../ultra-straps/Blue.png"
+    "image": "/ultra-straps/Blue.png"
   },
   {
     "id": 3,
     "color": "#929292",
     "name": "Gray",
-    "image": "/../ultra-straps/Gray.png"
+    "image": "/ultra-straps/Gray.png"
   },
   {
     "id": 4,
     "color": "#f2d13a",
     "name": "Yellow",
-    "image": "/../ultra-straps/Yellow.png"
+    "image": "/ultra-straps/Yellow.png"
   },
   {
     "id": 5,
     "color": "#28C9AD",
     "name": "Tiffany",
-    "image": "/../ultra-straps/Tiffany.png"
+    "image": "/ultra-straps/Tiffany.png"
   },
   {
     "id": 6,
     "color": "#f56821",
     "name": "Orange",
-    "image": "/../ultra-straps/Oreng.png"
+    "image": "/ultra-straps/Oreng.png"
   },
   {
     "id": 7,
     "color": "#D12F30",
     "name": "Red",
-    "image": "/../ultra-straps/Red.png"
+    "image": "/ultra-straps/Red.png"
   },
   {
     "id": 8,
     "color": "#06064f",
     "name": "Navy",
-    "image": "/../ultra-straps/Navy.png"
+    "image": "/ultra-straps/Navy.png"
   },
   {
     "id": 9,
     "color": "#ebebeb",
     "name": "White",
-    "image": "/../ultra-straps/White.png"
+    "image": "/ultra-straps/White.png"
   }
 ]

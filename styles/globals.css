@@ -18,6 +18,10 @@ a {
 .swiper {
   direction: ltr;
   padding-top: 100px;
+
+  @media (max-width: 768px) {
+    padding: 10px 0 10px 0 !important;
+  }
 }
 
 .swiper-wrapper {
@@ -161,7 +165,7 @@ a {
 }
 
 .swiper-btns-wrap {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -171,9 +175,14 @@ a {
 }
 
 .swiper-button-container {
-  width: fit-content;
+  width: 100vw;
   display: flex;
+  justify-content: center;
   gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    justify-content: flex-start;
+  }
 }
 
 .circle {

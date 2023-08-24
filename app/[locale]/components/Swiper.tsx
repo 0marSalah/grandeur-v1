@@ -66,7 +66,8 @@ export default function CutomeSwiper() {
           slidesPerView={5}
           spaceBetween={5}
           breakpoints={{
-            400: { slidesPerView: 1 },
+            100: { slidesPerView: 1 },
+            300: { slidesPerView: 1.5 },
             600: { slidesPerView: 2 },
             900: { slidesPerView: 3 },
             1200: { slidesPerView: 4 },

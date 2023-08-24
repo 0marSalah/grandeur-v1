@@ -16,6 +16,7 @@ import "@styles/globals.css";
 import { useEffect, useState } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import HeaderCom from "./components/Header";
+import Image from "next/image";
 
 export default function Rootlayout({
   children,
@@ -88,7 +89,9 @@ export default function Rootlayout({
               <AppContainer>
                 <HeaderMob>
                   <HeaderConMob>
-                    <img
+                    <Image
+                      width={30}
+                      height={30}
                       onClick={handleBurger}
                       src="/burger.svg"
                       alt=""
@@ -96,7 +99,12 @@ export default function Rootlayout({
                     />
                     <LogoWrapperMob>
                       <LinkC href="/">
-                        <img src={"logo.png"} alt="logo" />
+                        <Image
+                          width={195}
+                          height={35}
+                          src={"/logo.png"}
+                          alt="logo"
+                        />
                       </LinkC>
                     </LogoWrapperMob>
                   </HeaderConMob>
@@ -208,6 +216,10 @@ const AppContainer = styled.div`
     padding: 170px 0px 30px 0;
     min-height: 100%;
     min-width: 100%;
+  }
+
+  @media screen and (max-width: 620px) {
+    padding: 120px 0px 30px 0;
   }
 
   * {

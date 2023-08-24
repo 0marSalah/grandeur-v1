@@ -4,5 +4,13 @@
     "landing-subtitle": "Starts from $380",
     "label": "Change language",
     "locale": "{locale, select, ar {عربي} en {English} other {Unknown}}"
+  },
+  "Customizer": {
+    "From": "From",
+    "Case Size": "Case Size",
+    "Case Type": "Case Type",
+    "Strap Color": "Strap Color",
+    "Price": "Price",
+    "RAW TITANIUM CASE": "RAW TITANIUM CASE"
   }
 }

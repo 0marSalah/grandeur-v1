@@ -71,14 +71,14 @@ const HeaderCom = ({ clicked, handleX }: HeaderType) => {
               <li key={index}>{item.name}</li>
             </>
           ))}
-          <li>English/عربي</li>
+          <LocaleSwitcher />
           <p className="mob-login-btn">Login/Regisger</p>
         </ul>
       </div>
       <Header>
         <LogoWrapper>
           <Link href="/">
-            <img src={"logo.png"} alt="logo" />
+            <Image width={195} height={37} src={"/logo.png"} alt="logo" />
           </Link>
         </LogoWrapper>
         <Ul>
@@ -107,7 +107,13 @@ const HeaderCom = ({ clicked, handleX }: HeaderType) => {
             {locale === "en" ? "Login" : "تسجيل دخول"}
           </button>
         </div>
-        <img src="/burger.svg" alt="" className="burger" />
+        <Image
+          width={30}
+          height={30}
+          src="/burger.svg"
+          alt=""
+          className="burger"
+        />
       </Header>
     </>
   );
@@ -166,6 +172,7 @@ const Ul = styled.ul`
     margin-right: 10px;
     display: flex;
     align-items: center;
+    white-space: nowrap;
 
     &:not(:last-child):after {
       content: "|";
