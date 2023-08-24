@@ -1,9 +1,9 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/virtual";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { Ref, useRef, useState } from "react";
 import cases from "@data/cases.json";
 import straps from "@data/normal-straps.json";
 import ultraStraps from "@data/ultra-straps.json";
@@ -29,7 +29,8 @@ export default function CutomeSwiper() {
 
   const handlePagination = (index: number) => {
     setStrapActiveIdx(index);
-    swiperRef?.current && swiperRef.current.swiper.slideTo(index);
+    // @ts-ignore
+    swiperRef?.current && swiperRef?.current?.swiper?.slideTo(index);
   };
 
   const handleSlideChange = (swiper: { activeIndex: number }) => {
@@ -49,7 +50,9 @@ export default function CutomeSwiper() {
 
   const handleSelectSize = (idx: number) => {
     setSizeActiveIdx(idx);
+    // @ts-ignore
     if (swiperRef.current && swiperRef.current.swiper) {
+      // @ts-ignore
       swiperRef.current.swiper.slideTo(idx);
     }
   };
