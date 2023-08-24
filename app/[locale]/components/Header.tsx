@@ -58,7 +58,7 @@ const HeaderCom = ({ clicked, handleX }: HeaderType) => {
         }}
       >
         <Image
-          src="./x.svg"
+          src="/x.svg"
           alt=""
           onClick={handleX}
           width={25}
