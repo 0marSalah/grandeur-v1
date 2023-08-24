@@ -1,5 +1,5 @@
 "use client";
-import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/virtual";
 import Image from "next/image";
@@ -61,7 +61,6 @@ export default function CutomeSwiper() {
       {swiperType === "size" && (
         <Swiper
           ref={swiperRef}
-          style={{ padding: "100px 0 50px 0" }}
           centeredSlides
           slidesPerView={5}
           spaceBetween={5}
@@ -75,6 +74,7 @@ export default function CutomeSwiper() {
           }}
           onSlideChange={(swiper) => handleSlideChange(swiper)}
           initialSlide={0}
+          className="size-swiper-wrap"
         >
           <div className="size-swiper">
             {watches.map((i) => (
@@ -120,7 +120,7 @@ export default function CutomeSwiper() {
             spaceBetween={5}
             breakpoints={{
               300: { slidesPerView: 1.5 },
-              400: { slidesPerView: 2 },
+              400: { slidesPerView: 1.5 },
               600: { slidesPerView: 2.5 },
               900: { slidesPerView: 3.5 },
               1200: { slidesPerView: 4.5 },
