@@ -1,11 +1,11 @@
 "use client";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useTransition } from "react";
 import styled from "styled-components";
 import LocaleSwitcher from "./LocaleSwitcher";
+import Link from "next/dist/client/link";
 
 type HeaderType = {
   clicked: boolean;
