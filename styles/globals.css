@@ -257,6 +257,10 @@ a {
   gap: 10px;
 }
 
+.btn-wrap-size {
+  gap: 5px !important;
+}
+
 .btn-wrap button {
   border: none;
   background: none;
@@ -332,8 +336,8 @@ a {
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
-  padding: 0 10px;
   transition: 0.35s ease-in-out;
+  gap: 5px;
 }
 
 .size-list li {
@@ -341,7 +345,6 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
   cursor: pointer;
   font-size: 0.9rem;
 }

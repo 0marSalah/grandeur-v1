@@ -180,7 +180,10 @@ export default function CutomeSwiper() {
       </div>
       <div className="swiper-btns-wrap">
         <div className="swiper-button-container">
-          <div className="btn-wrap" onClick={() => setSwiperType("size")}>
+          <div
+            className="btn-wrap btn-wrap-size"
+            onClick={() => setSwiperType("size")}
+          >
             <Image width={18} height={25} src="/Frame-icon.svg" alt="" />
             <button
               className="swiper-button"
