@@ -62,7 +62,7 @@ export default function CutomeSwiper() {
         <Swiper
           ref={swiperRef}
           centeredSlides
-          slidesPerView={5}
+          slidesPerView={8}
           spaceBetween={5}
           breakpoints={{
             100: { slidesPerView: 1 },
@@ -73,7 +73,7 @@ export default function CutomeSwiper() {
             1500: { slidesPerView: 5 },
           }}
           onSlideChange={(swiper) => handleSlideChange(swiper)}
-          initialSlide={0}
+          initialSlide={1}
           className="size-swiper-wrap"
           scrollbar
         >
