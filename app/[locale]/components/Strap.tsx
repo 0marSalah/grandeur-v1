@@ -40,6 +40,7 @@ const StrapSwiper = ({
         }}
         onSlideChange={(swiper) => handleSlideChange(swiper)}
         initialSlide={strapActiveIdx}
+        className="swiper-strap"
       >
         {straps.map((i: { id: number; image: string | StaticImport }) => (
           <SwiperSlide key={i.id}>
