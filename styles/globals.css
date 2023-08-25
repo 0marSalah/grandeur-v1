@@ -17,13 +17,14 @@ a {
 
 .swiper {
   direction: ltr;
-  padding-top: 100px;
+  padding-top: 100px !important;
 
   @media screen and (max-width: 768px) and (max-height: 600px) {
     padding: 7px 0 90px 0px !important;
   }
+
   @media screen and (max-height: 668px) {
-    padding: 10px 0 90px 0px !important;
+    padding: 10px 0 10px 0px !important;
   }
 }
 
@@ -60,19 +61,15 @@ a {
 .strap-image {
   position: absolute;
   left: calc(50% - 200px);
-  top: 1px;
+  top: 111px;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
 
-  @media screen and (max-width: 768px) and (max-height: 600px) {
-    top: -75px;
-  }
-
-  @media screen and (max-height: 668px) {
-    top: -75px;
+  @media screen and (max-width: 768px) and (max-height: 680px) {
+    top: -60px;
   }
 }
 
@@ -95,6 +92,34 @@ a {
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+.normal {
+  left: calc(50% - 112.5px) !important;
+  top: 189px !important;
+
+  @media screen and (max-width: 768px) and (max-height: 680px) {
+    left: calc(50% - 112.5px) !important;
+    top: 99px !important;
+  }
+}
+
+.ultra {
+  left: calc(50% - 116px);
+  top: 186.5px;
+
+  @media screen and (max-width: 768px) and (max-height: 680px) {
+    left: calc(50% - 117px);
+    top: 96px;
+  }
+}
+
+.swiper-case {
+  padding: 200px 0 91px 0px !important;
+
+  @media screen and (max-width: 768px) and (max-height: 680px) {
+    padding: 30px 0 90px 0px !important;
+  }
 }
 
 .strape-slide-image {
@@ -220,7 +245,7 @@ a {
   border-radius: 24px;
   background: rgba(0, 0, 0, 0.52);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  padding-block: 10px;
+  padding-block: 7.5px;
   padding-inline: 15px;
   font-size: 0.8rem;
   cursor: pointer;
@@ -229,6 +254,7 @@ a {
   align-items: center;
   white-space: nowrap;
   color: #fff;
+  gap: 10px;
 }
 
 .btn-wrap button {
@@ -237,6 +263,12 @@ a {
   cursor: pointer;
   font-size: 0.9rem;
   color: #fff;
+}
+
+.btn-complete {
+  background: rgba(0, 0, 0, 0.7) !important;
+  display: flex;
+  align-items: center;
 }
 
 .color-wrap {
@@ -252,9 +284,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
-  padding: 0px 0 10px 0 10px;
   transition: 0.3s ease-in-out;
-  margin-left: 10px;
 }
 
 .swiper-button-container .color-wrap ul li {

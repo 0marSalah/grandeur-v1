@@ -56,14 +56,9 @@ const StrapSwiper = ({
         ))}
       </Swiper>
       <div
-        className="case-image"
-        style={{
-          left:
-            strapType === "normal"
-              ? "calc(50% - 112.5px)"
-              : "calc(50% - 116px)",
-          top: strapType === "normal" ? "90px" : "85px",
-        }}
+        className={
+          strapType === "normal" ? "case-image normal" : "strap-image ultra"
+        }
       >
         <Image width="225" height="225" src={caseImg} alt="" />
       </div>

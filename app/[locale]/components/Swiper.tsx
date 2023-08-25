@@ -115,7 +115,8 @@ export default function CutomeSwiper() {
             <Image width="400" height="400" src={strapImg} alt="" />
           </div>
           <Swiper
-            style={{ padding: "90px 0 90px 0" }}
+            className="swiper-case"
+            style={{}}
             centeredSlides={true}
             slidesPerView={1}
             spaceBetween={5}
@@ -180,15 +181,7 @@ export default function CutomeSwiper() {
       <div className="swiper-btns-wrap">
         <div className="swiper-button-container">
           <div className="btn-wrap" onClick={() => setSwiperType("size")}>
-            <Image
-              width={18}
-              height={25}
-              style={{
-                marginLeft: swiperType == "size" ? "" : "10px",
-              }}
-              src="/Frame-icon.svg"
-              alt=""
-            />
+            <Image width={18} height={25} src="/Frame-icon.svg" alt="" />
             <button
               className="swiper-button"
               onClick={() => setSwiperType("size")}
@@ -231,15 +224,7 @@ export default function CutomeSwiper() {
             )}
           </div>
           <div className="btn-wrap">
-            <Image
-              width={18}
-              height={25}
-              style={{
-                marginLeft: swiperType == "case" ? "" : "10px",
-              }}
-              src="/Group-icon.svg"
-              alt=""
-            />
+            <Image width={18} height={25} src="/Group-icon.svg" alt="" />
             {swiperType !== "case" ? (
               <button
                 className="swiper-button"
@@ -275,15 +260,7 @@ export default function CutomeSwiper() {
             className="color-wrap btn-wrap"
             onClick={() => setSwiperType("strap")}
           >
-            <Image
-              width={20}
-              height={20}
-              style={{
-                marginLeft: swiperType == "strap" ? "" : "10px",
-              }}
-              src="/steak-icon.svg"
-              alt=""
-            />
+            <Image width={20} height={20} src="/steak-icon.svg" alt="" />
             {swiperType !== "strap" && (
               <button onClick={() => setSwiperType("strap")}>
                 {t("Strap Color")}
@@ -306,6 +283,11 @@ export default function CutomeSwiper() {
               </ul>
             )}
           </div>
+          {swiperType === "strap" && (
+            <div className="btn-wrap btn-complete">
+              <button className="">{t("comp")}</button>
+            </div>
+          )}
         </div>
       </div>
     </div>
