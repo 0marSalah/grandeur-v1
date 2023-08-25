@@ -102,7 +102,7 @@ const HeaderCom = ({ clicked, handleX }: HeaderType) => {
             height={20}
             className="se"
           />
-          <p className="-btn">{locale === "en" ? "Register" : "انشاء حساب"}</p>
+          <p className="">{locale === "en" ? "Register" : "انشاء حساب"}</p>
           <button className="login-btn">
             {locale === "en" ? "Login" : "تسجيل دخول"}
           </button>
@@ -134,12 +134,12 @@ const Header = styled.div`
     width: 25px;
     margin-right: 50px;
 
-    @media screen and (max-width: 950px) {
+    @media screen and (max-width: 1190px) {
       display: block;
     }
   }
 
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 1190px) {
     display: none;
   }
 `;

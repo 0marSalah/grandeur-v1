@@ -130,7 +130,7 @@ const HeaderMob = styled.div`
   justify-content: center;
   direction: rtl;
 
-  @media screen and (min-width: 950px) {
+  @media screen and (min-width: 1190px) {
     display: none;
   }
 `;

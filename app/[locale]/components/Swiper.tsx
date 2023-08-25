@@ -75,6 +75,7 @@ export default function CutomeSwiper() {
           onSlideChange={(swiper) => handleSlideChange(swiper)}
           initialSlide={0}
           className="size-swiper-wrap"
+          scrollbar
         >
           <div className="size-swiper">
             {watches.map((i) => (

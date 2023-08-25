@@ -1,37 +1,29 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next-intl/client";
 import { ChangeEvent, useTransition } from "react";
 
 export default function LocaleSwitcher() {
-  const t = useTranslations("Index");
-  const [isPending, startTransition] = useTransition();
+  const [_, startTransition] = useTransition();
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
   function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    const nextLocale = event.target.value;
+    const nextLocale = event.target.innerHTML;
+    console.log({ nextLocale });
     startTransition(() => {
-      router.replace(pathname, { locale: nextLocale });
+      router.replace(pathname, {
+        locale: nextLocale === "English" ? "en" : "ar",
+      });
     });
   }
 
   return (
-    <li>
-      <select
-        className="local-switch"
-        defaultValue={locale}
-        disabled={isPending}
-        onChange={onSelectChange}
-      >
-        {["en", "ar"].map((cur) => (
-          <option key={cur} value={cur}>
-            {t("locale", { locale: cur })}
-          </option>
-        ))}
-      </select>
+    // @ts-ignore
+    <li onClick={(e) => onSelectChange(e)}>
+      {locale === "en" ? "عربي" : "English"}
     </li>
   );
 }
